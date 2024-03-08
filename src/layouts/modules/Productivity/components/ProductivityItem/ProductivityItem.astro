@@ -1,0 +1,20 @@
+---
+import { H5, textBold, textMedium } from '@/src/styles/typography';
+import { productivityItemIcon, productivityItemStyles } from './styles'
+
+interface Props {
+  iconSrc: string;
+  title: string;
+  text: string;
+}
+
+const { iconSrc, title, text } = Astro.props
+
+---
+
+<div class={productivityItemStyles}>
+  <img src={'/icons' + iconSrc} alt="Icon" class={productivityItemIcon} />
+  <h5 class={H5}>{title}</h5>
+  <p class={textMedium}>{text}</p>
+  <a href="/" class={textBold}>Learn more</a>
+</div>

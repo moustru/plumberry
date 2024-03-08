@@ -1,0 +1,18 @@
+---
+import BlockTitle from "@/src/components/BlockTitle/BlockTitle.astro"
+import ManagementItem from './components/ManagementItem/ManagementItem.astro'
+import { managementBlock, managementItemBlock } from './styles'
+import { managementItems } from './data'
+
+---
+
+<div class={managementBlock}>
+  <BlockTitle
+    tagText="Everything you need"
+    title="Streamlined for easy management"
+    text="Enjoy customizable lists, team work tools, and smart tracking all in one place. Set tasks, get reminders, and see your progress simply and quickly."
+  />
+  <div class={managementItemBlock}>
+    {managementItems.map((item) => <ManagementItem {...item}/>)}
+  </div>
+</div>

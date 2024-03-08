@@ -1,10 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Common from '@/src/layouts/Common.astro'
+import Header from '@/src/layouts/modules/Header/Header.astro'
+import Banner from '@/src/layouts/modules/Banner/Banner.astro'
+import Productivity from '@/src/layouts/modules/Productivity/Productivity.astro'
+import Management from '@/src/layouts/modules/Management/Management.astro'
+import '../index.css'
 ---
 
-<Layout title="Welcome to Astro.">
-	<h1>Hello!</h1>
-</Layout>
+<Common title="Some landing page">
+	<Header />
+	<Banner />
+	<Productivity />
+	<Management />
+</Common>
 
 <style>
 

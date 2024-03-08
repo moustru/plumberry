@@ -1,0 +1,9 @@
+---
+import { cx } from '@/styled-system/css'
+import { tagStyles } from './styles'
+import { textTag } from '@/src/styles/typography'
+---
+
+<div class={cx(textTag, tagStyles)}>
+  <slot />
+</div>

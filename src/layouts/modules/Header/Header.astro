@@ -1,0 +1,23 @@
+---
+import { textMedium } from "@/src/styles/typography"
+import { cx } from "@/styled-system/css"
+import Button from '@/src/components/Button/Button.astro'
+import { headerBlock, menuBlock, menuNavBlock, navItem } from './styles'
+---
+
+<div class={headerBlock}>
+  <a href="/">
+    <img src="/logo.png" alt="Logo" />
+  </a>
+  
+  <div class={menuBlock}>
+    <nav class={menuNavBlock}>
+      <a href="" class={cx(textMedium, navItem)}>About</a>
+      <a href="" class={cx(textMedium, navItem)}>Features</a>
+      <a href="" class={cx(textMedium, navItem)}>Customers</a>
+      <a href="" class={cx(textMedium, navItem)}>Updates</a>
+      <a href="" class={cx(textMedium, navItem)}>Help</a>
+    </nav>
+    <Button variant="black">Get for free</Button>
+  </div>
+</div>

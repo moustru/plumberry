@@ -1,0 +1,20 @@
+---
+import type { ButtonVariant } from './types'
+import { buttonStyles } from './styles'
+import { setVariant } from './utils'
+import { cx } from '@/styled-system/css';
+import { textBold } from '@/src/styles/typography';
+
+interface Props {
+  variant: ButtonVariant;
+}
+
+const { variant } = Astro.props
+
+---
+
+<button class={cx(buttonStyles, textBold, setVariant(variant))}>
+  <p>
+    <slot />
+  </p>
+</button>

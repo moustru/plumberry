@@ -1,0 +1,19 @@
+---
+import { H4, textMedium } from '@/src/styles/typography';
+import { managementItemBlock } from './styles'
+
+interface Props {
+  imgSrc: string;
+  title: string;
+  text: string;
+}
+
+const { imgSrc, title, text } = Astro.props
+---
+
+<div class={managementItemBlock}>
+  <img src={imgSrc} alt="Management item img" />
+  <h4 class={H4}>{title}</h4>
+  <p class={textMedium}>{text}</p>
+</div>
+

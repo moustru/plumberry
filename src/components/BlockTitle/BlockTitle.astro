@@ -1,0 +1,19 @@
+---
+import Tag from "../Tag/Tag.astro"
+import { H2, textLarge } from "@/src/styles/typography"
+import { productivityTitleBlock } from './styles'
+
+interface Props {
+  tagText: string;
+  title: string;
+  text?: string;
+}
+
+const { tagText, title, text } = Astro.props
+---
+
+<div class={productivityTitleBlock}>
+  <Tag>{tagText}</Tag>
+  <h2 class={H2}>{title}</h2>
+  { text && <p class={textLarge}>{text}</p>}
+</div>

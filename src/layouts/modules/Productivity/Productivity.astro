@@ -1,0 +1,20 @@
+---
+import BlockTitle from '@/src/components/BlockTitle/BlockTitle.astro'
+import ProductivityItem from './components/ProductivityItem/ProductivityItem.astro'
+import { productivityBlock, pyramidStyles, torusStyles, itemsBlock } from './styles'
+import { productivityItems } from './data'
+---
+
+<div class={productivityBlock}>
+  <BlockTitle
+    tagText='Boost your productivity'
+    title='A more effective way to track progress'
+    text='Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website in just minutes with the set of free components for Framer.'
+  />
+  <img src="/interface.png" alt="Interface" />
+  <img src="/pyramid1.png" alt="Pyramid" class={pyramidStyles} />
+  <img src="/torus1.png" alt="Torus" class={torusStyles} />
+  <div class={itemsBlock}>
+    {productivityItems.map((item) => <ProductivityItem {...item} />)}
+  </div>
+</div>

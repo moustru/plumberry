@@ -34,6 +34,9 @@ export default defineConfig({
             100: {
               value: "#EAEEFE",
             },
+            200: {
+              value: "#6F6C90",
+            },
           },
         },
       },

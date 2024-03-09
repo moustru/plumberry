@@ -1,0 +1,30 @@
+---
+import Button from "@/src/components/Button/Button.astro"
+import { H2, H5, textSmall } from "@/src/styles/typography"
+import { billingItemBlock, textPurple, billingItemPrice, billingItemList, textWhite } from './styles'
+import { cx } from "@/styled-system/css"
+import type { Variant } from './types'
+import { setVariant } from './utils'
+
+interface Props {
+  variant: Variant;
+  billingName: string;
+  price: number;
+  btnText: string;
+  advantages: string[];
+}
+
+const { variant, billingName, price, btnText, advantages } = Astro.props
+---
+
+<div class={cx(billingItemBlock, setVariant(variant))}>
+  <h5 class={cx(H5, textPurple)}>{billingName}</h5>
+  <div class={billingItemPrice}>
+    <h2 class={cx(H2, variant === 'black' ? textWhite : '')}>${price}</h2>
+    <h5 class={cx(H5, textPurple)}>/monthly</h5>
+  </div>
+  <Button variant={variant === 'white' ? 'black' : 'white'}>{btnText}</Button>
+  <ol class={billingItemList}>
+    {advantages.map((advantage) => <li class={cx(textSmall, variant === 'black' ? textWhite : '')}>{advantage}</li>)}
+  </ol>
+</div>

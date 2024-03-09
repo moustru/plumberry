@@ -1,0 +1,17 @@
+---
+import BlockTitle from '@/src/components/BlockTitle/BlockTitle.astro'
+import BillingItem from './components/BillingItem/BillingItem.astro'
+import { billingItemsBlock } from './styles'
+import BILLINGS from './data.json'
+---
+
+<div>
+  <BlockTitle
+    tagText='Boost your productivity'
+    title='A more effective way to track progress'
+    text='Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website in just minutes with the set of free components for Framer.'
+  />
+  <div class={billingItemsBlock}>
+    {BILLINGS.map((billing, i) => <BillingItem {...billing} variant={i === 1 ? 'black' : 'white'} />)}
+  </div>
+</div>
